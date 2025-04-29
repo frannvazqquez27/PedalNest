@@ -26,9 +26,7 @@
     }
   ?>
 
-  <section id="container-slider">	
-    <a href="javascript: fntExecuteSlide('prev');" class="arrowPrev"><i class="fas fa-chevron-circle-left"></i></a>
-    <a href="javascript: fntExecuteSlide('next');" class="arrowNext"><i class="fas fa-chevron-circle-right"></i></a>
+  <section id="container-slider">
     <ul class="listslider">
       <li><a itlist="itList_0" href="#" class="item-select-slid"></a></li>
       <li><a itlist="itList_1" href="#"></a></li>
@@ -101,18 +99,13 @@
         <h1 style="text-align: center; color: black">Cuéntanos</h1>
       <form id="formularioResenas" action="controladorInicio.php" method="POST">
         <h4>Nombre</h4>
-        <div class=" input-group mb-3">
-          <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-person-fill" viewBox="0 0 16 16">
-            <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-1 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm-3 4c2.623 0 4.146.826 5 1.755V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-1.245C3.854 11.825 5.377 11 8 11z"/>
-          </svg></span>
+          <div class=" input-group mb-3"><span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user" style="color: #ffffff;"></i></span>
           <input id = "nombreInput" type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" name="nombre" required>
         </div>
         <h4>Correo eléctronico</h4>
         <div class="input-group mb-3">
-          <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-          </svg></span>
-          <input id = "correoInput" type="text" class="form-control" placeholder="Correo" aria-label="Username" name="user"  pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required>
+          <span class="input-group-text"><i class="fa-solid fa-inbox" style="color: #ffffff;"></i></span>
+          <input id = "correoInput" type="text" class="form-control" placeholder="Correo electrónico" aria-label="Username" name="user"  pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required>
         </div>
         <div class="input-group">
           <textarea id = "textoInput" class="form-control" aria-label="With textarea" placeholder="Añade un comentario" name="comentario"></textarea>

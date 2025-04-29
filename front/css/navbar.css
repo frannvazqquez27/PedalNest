@@ -133,7 +133,7 @@
     font-size: 65px;
 }
 
-@media screen and (max-height:450px) {
+@media screen and (max-height: 450px) {
     .header .overlay a{
         font-size: 20px;
     }

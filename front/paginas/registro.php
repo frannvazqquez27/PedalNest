@@ -24,7 +24,7 @@
     <div class="row" id="cv">
       <div class="col-lg-12" id="cajalogin">
         <h2>Registro</h2>
-        <p>¿Ya eres miembro? <a href="ControladorLogin.php" class="enlace">Iniciar Sesión</a></p>
+        <p>¿Ya estás registrado? <a href="ControladorLogin.php" class="enlace">Iniciar Sesión</a></p>
         <hr>
         <form id="formularioRegistro"method="POST" action="ControladorRegister.php">
         <div class="row">  
@@ -48,14 +48,14 @@
             <h5>Correo eléctronico</h5>
             <div class=" input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-inbox" style="color: #ffffff;"></i></span>
-                <input id="correo" type="text" class="form-control" placeholder="ejemplo@gmail.com" aria-label="Username" aria-describedby="basic-addon1" name="correo"  pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required>
+                <input id="correo" type="text" class="form-control" placeholder="Correo electrónico" aria-label="Username" aria-describedby="basic-addon1" name="correo"  pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required>
             </div>
           </div>
           <div class="col-lg-6">  
             <h5>Confirma tu correo</h5>
             <div class=" input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-inbox" style="color: #ffffff;"></i></span>
-                <input id="correo2"type="text" class="form-control" placeholder="ejemplo@gmail.com" aria-label="Username" aria-describedby="basic-addon1" name="confirmar_correo"  pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required>
+                <input id="correo2"type="text" class="form-control" placeholder="Correo electrónico" aria-label="Username" aria-describedby="basic-addon1" name="confirmar_correo"  pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" required>
             </div>
           </div>   
         </div> 
@@ -64,14 +64,14 @@
             <h5>Contraseña</h5>
             <div class=" input-group mb-3">
                 <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-key" style="color: #ffffff;"></i></span>
-                <input id="pass" type="password" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" name="passd" required>
+                <input id="pass" type="password" class="form-control" placeholder="********" aria-label="Username" aria-describedby="basic-addon1" name="passd" required>
             </div>
           </div>  
           <div class="col-lg-6">
             <h5>Confirmación</h5>
             <div class=" input-group mb-3">
                 <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-key" style="color: #ffffff;"></i></span>
-                <input id="pass2" type="password" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" name="confirmar_passd" required> 
+                <input id="pass2" type="password" class="form-control" placeholder="********" aria-label="Username" aria-describedby="basic-addon1" name="confirmar_passd" required> 
             </div>
           </div> 
         </div>

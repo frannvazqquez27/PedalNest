@@ -19,7 +19,7 @@
                 <li><a href="../back/controladorLogin.php">Inicio de Sesión</a></li>
            </ul>            
         </nav>
-        <a onclick="openNav()" class="menu" href="#"><button>Menu</button></a>
+        <a onclick="openNav()" class="menu" href="#"><button>Menú</button></a>
         <div id="mobile-menu" class="overlay">
             <a onclick="closeNav()" href="" class="close">&times;</a>
             <div class="overlay-content">

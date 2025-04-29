@@ -4,14 +4,13 @@
     <title>PedalNest</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="../front/bootstrap/css/bootstrap.min.css">
-    <script src="../front/bootstrap/js/bootstrap.min.js"></script>
     <link rel="icon" type="image/png" href="../front/imgs/favicon/logoPedal.png">
     <link rel="stylesheet" href="../front/css/var.css">
     <link rel="stylesheet" href="../front/css/tienda.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script defer src="../front/javascript/tienda.js"></script>
     <script defer src="../front/javascript/jquery-3.6.0.min.js"></script>
+    <script src="../front/bootstrap/js/bootstrap.min.js"></script>
+    <script defer src="../front/javascript/tienda.js"></script>
     <script src="../front/javascript/blur.js"></script>
 </head>
 
@@ -46,7 +45,7 @@
                           <a <?php echo($Bicicletas[$i]->Nombre)?>><img src="../front/imgs/tienda/<?php  echo($Bicicletas[$i]->Imagen);?>" class="card-img-top" alt="..."></a>
                             <div class="card-body">
                             <a <?php echo($Bicicletas[$i]->Nombre)?> style="color:black"><h5 class="card-title"><?php  echo($Bicicletas[$i]->Nombre);?></h5></a>
-                            <p class="d-none"><?php  echo($Bicicletas[$i]->Precio);?></p>    
+                            <p class="d-none"><?php  echo($Bicicletas[$i]->Precio);?></p>
                             <button id="<?php echo $Bicicletas[$i]->Nombre ?>" class="btn btn-primary">Comprar <?php  echo($Bicicletas[$i]->Precio);?>€</button>
                             </div>
                           </div>
@@ -102,21 +101,17 @@
                 <h5 class="card-title" id ="objetos"></h5>
                 <hr>
                 <div class="btn-group" role="group" aria-label="Basic example">
-                  <button type="button" class="btn btn-primary pse"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                  </svg></button>
+                  <button type="button" class="btn btn-primary pse"><i class="fa-solid bi-trash" style="color: #ffffff;"></i></button>
                   <button type="button" class="btn btn-primary pbt" id="precio">00,00€</button>
                 </div>
                 <div class="row">
-                <div class="col-2">
-                <button class="btn btn-danger btn-sm">-</button>
-                </div> 
-                <div class="col-7 text-center" id="cantidad">0
-                </div> 
-                <div class="col-2">
-                <button class="btn btn-danger btn-sm">+</button>
-                </div>
+                  <div class="col-2">
+                    <button class="btn btn-danger btn-sm">-</button>
+                  </div> 
+                  <div class="col-7 text-center" id="cantidad">0</div> 
+                  <div class="col-2">
+                    <button class="btn btn-danger btn-sm">+</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -135,16 +130,16 @@
       </div>
     </div>
 
-    <div class="card d-none" style="width:35rem;height:min-cotent;position:absolute;top:30%;left:25%" id="tarjeta-creada">
+    <div class="card d-none" style="width:35rem;height:min-cotent;position:absolute;top:15%;left:10%" id="tarjeta-creada">
       <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="id-cerrar-card">
         <i class="fa-solid fa-xmark" style="color: #1b3039;"></i>
       </div>
-    <div class="card-body">
-      <form id="formTarjeta" method="POST" action="controladorCompra.php" >                 
-        <div action="" role="form">
-          <div class="form-group">
-            <div class="container">
-              <h5 class="card-title">Confirmar compra</h5>
+      <div class="card-body">
+        <form id="formTarjeta" method="POST" action="controladorCompra.php" >                 
+          <div action="" role="form">
+            <div class="form-group">
+              <div class="container">
+                <h5 class="card-title">Confirmar compra</h5>
                   <label for="id-form-pago" class="form-label"> Método de pago 
                     <i class="fa-solid fa-credit-card" style="color: #1b3039;"></i>
                   </label>

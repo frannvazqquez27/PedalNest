@@ -38,7 +38,7 @@
                         <span class="input-group-text" id="basic-addon2">
                         <i class="fa-solid fa-key" style="color: #ffffff;"></i>
                         </span>
-                        <input id="passInput" type="password" class="form-control" name="pass" required>
+                        <input id="passInput" type="password" class="form-control" name="pass" placeholder="********" required>
                     </div>
                     <a href="#" class="enlace">¿No recuerdas la contraseña?</a>
                     <hr>
