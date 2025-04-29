@@ -1,3 +1,7 @@
+* {
+    font-family: 'Arial', sans-serif;
+}
+
 #cajalogin{
     position: relative;
     top: 30px;
@@ -34,12 +38,6 @@ footer{
     position: relative;
 }
 
-#trampa{
-    position: relative;
-    width: 100%;
-    height: 220px;
-}
-
 #cajalogin > form > div > span{
     color: white;
     background-color: var(--colormain);
@@ -56,10 +54,6 @@ footer{
 }
 
 @media screen and (max-width: 990px){
-    #trampa{
-        display: none;
-    }
-    
     #cajalogin{
         width: 100%;
         padding: 100px;

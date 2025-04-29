@@ -78,7 +78,7 @@ function validar() {
 }
 
 function validarJS1() {
-    console.log("entro en js1");
+    console.log("Entró en JS1.");
     return nombreTarjetaJS() && numeroTarjetaJS() && fechaCadJS() && cvvJS();
 }
 

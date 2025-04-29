@@ -1,0 +1,162 @@
+body {
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    margin-top: 50px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.imgPerfil {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #dee2e6;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h4 {
+    color: #343a40;
+    font-weight: 600;
+    border-bottom: 2px solid var(--colormain);
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+h5 {
+    color: #495057;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background-color: var(--colormain);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: var(--colormainhover);
+    color: black;
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--colormain);
+    color: var(--colormain);
+    transition: 0.3s;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--colormain);
+    color: white;
+}
+
+label.bg-primary {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: var(--colormain);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+label.bg-primary:hover {
+    background-color: var(--colormainhover);
+    color: black;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+input[type="file"]:hover {
+    background-color: var(--colormainhover);
+    color: black;
+}
+
+#cerrar {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: var(--colormain);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    margin: 10px 0;
+    transition: 0.3s;
+}
+
+#cerrar:hover {
+    background-color: var(--colormainhover);
+    color: black;
+}
+
+@media (max-width: 990px) {
+    .container {
+        text-align: center;
+    }
+
+    .row > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .input-group {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .btn {
+        width: 90%;
+        max-width: 300px;
+        margin: 10px 0;
+    }
+
+    h4, h5 {
+        text-align: center;
+    }
+
+    input[type="file"] {
+        display: block;
+        width: 100%;
+        padding: 10px 15px;
+        margin: 10px 0;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        background-color: var(--colormain);
+        color: #ffffff;
+    }
+
+    input[type="file"]:hover {
+        background-color: var(--colormainhover);
+        color: black;
+    }
+
+    #cerrar {
+        display: block;
+        width: 90%;
+        max-width: 300px;
+        margin: 15px auto;
+    }
+}

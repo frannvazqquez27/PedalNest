@@ -1,9 +1,10 @@
 <?php session_start();
 
+include_once 'clases/usuarios.php';
+
 $error = false;
 if (isset($_POST['condiciones'])) {
     if ($_POST['correo'] == $_POST['confirmar_correo'] && $_POST['passd'] == $_POST['confirmar_passd']) {
-        include_once 'clases/usuarios.php';
         $notificacion;
         $usuario_registrado = new Usuario();
         if (isset($_POST['notificaciones'])) {

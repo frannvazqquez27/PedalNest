@@ -88,7 +88,6 @@ function textoAPI() {
 function textoJS() {
     let textoValor = texto.value;
     if (textoValor == '') {
-
         texto.setCustomValidity("¿Por qué quieres enviar una reseña vacía?");
         return false;
     } else {

@@ -32,7 +32,7 @@ if ($method == 'POST') {
     }
 } else {
     if (validarSesion()) {
-        include '../front/paginas/miPerfil.php';
+        include '../front/paginas/perfil.php';
     } else {
         header('Location: ../front/paginas/index.php');
     }
