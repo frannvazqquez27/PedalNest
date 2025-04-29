@@ -43,7 +43,7 @@
                     </div>
                     <a href="#" class="enlace">¿No recuerdas la contraseña?</a>
                     <hr>
-                    <button type="submit" class="btn btn-danger" name="enviar" id="botonenviar">Iniciar sesión</button>
+                    <button type="submit" class="btn btn-primary" name="enviar" id="botonenviar">Iniciar sesión</button>
                 </form>
             </div>
         </div>

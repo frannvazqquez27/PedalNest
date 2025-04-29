@@ -42,7 +42,7 @@
                                     min="1" required>
                             </div>
                         </div>
-                        <button id="btnAñadir" type="submit" class="btn btn-danger" name="addProduct">Añadir</button>
+                        <button id="btnAñadir" type="submit" class="btn btn-primary" name="addProduct">Añadir</button>
                     </div>
                 </form>
 
@@ -65,7 +65,7 @@
                                     min="1" required>
                             </div>
                         </div>
-                        <button id="btnEliminar" type="submit" class="btn btn-danger" name="delProduct">Eliminar</button>
+                        <button id="btnEliminar" type="submit" class="btn btn-primary" name="delProduct">Eliminar</button>
                     </div>
                 </form>
 
@@ -74,7 +74,7 @@
                 <br>
 
                 <form name="cerrar" method="POST" action="controladorPerfil.php">
-                    <button type="submit" class="btn btn-danger" name="cerrarSesion">Cerrar sesión</button>
+                    <button type="submit" class="btn btn-primary" name="cerrarSesion">Cerrar sesión</button>
                 </form>
             </div>
         </div>

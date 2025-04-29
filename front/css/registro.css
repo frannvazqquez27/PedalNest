@@ -21,12 +21,12 @@
     color: var(--colormainhover)
 }
 
-.btn-danger{
+.btn-primary{
     margin-top:15px;
     background-color: var(--colormain);
 }
 
-.btn-danger:hover{
+.btn-primary:hover{
     background-color: var(--colormain);
 }
 
@@ -103,7 +103,7 @@ footer{
         height:30px;
     }
 
-    .btn-danger{
+    .btn-primary{
         margin-top:15px;
         font-size: 35px;
         padding: 10px 20px 10px 20px

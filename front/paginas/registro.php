@@ -117,7 +117,7 @@
               <label class="ticks"><input type="checkbox" id="cbox1" value="first_checkbox" name="condiciones" required> Acepto <a href="#" class="enlace">las normas y condiciones de uso.</a></label><br>
               <label class="ticks"><input type="checkbox" id="cbox2" value="second_checkbox" name="notificaciones"> Quiero recibir correos y publicidad sobre las novedades de la tienda.</label>                   
             <br>
-          <button id = "botonenviar" type="submit" class="btn btn-danger" name="registrar">Registrarme</button>
+          <button id = "botonenviar" type="submit" class="btn btn-primary" name="registrar">Registrarme</button>
         </form>
       </div>
     </div>

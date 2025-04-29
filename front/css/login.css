@@ -25,11 +25,11 @@
     color: var(--colormainhover)
 }
 
-.btn-danger{
+.btn-primary{
     background-color: var(--colormain);
 }
 
-.btn-danger:hover{
+.btn-primary:hover{
     background-color: var(--colormain);
 }
 
@@ -75,7 +75,7 @@ footer{
         height: 35px;
     }
 
-    .btn-danger{
+    .btn-primary{
         font-size: 35px;
         padding: 10px 20px 10px 20px
     }
