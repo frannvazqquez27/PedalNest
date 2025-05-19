@@ -1,95 +1,390 @@
+/*
+Este css, le da estilo a la página de producto individual.
+
+Autor: Fco. Manuel Martínez Vázquez (Modernizado)
+*/
+
 * {
-    font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box;
 }
 
-.imgPerfil{
-    width: 400px;
-    height: 250px
+body {
+  background-color: #f5f7fa;
+  color: #2d3748;
 }
 
-h5{
-    color:grey;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-#btnToLeft{
-    position:relative;
-    top: 25px;
-    left:180px;
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-#desTitulo{
-    margin-top:30px;
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-#desTexto{
-    margin-bottom:240px;
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.container {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  background: white;
+  padding: 0;
+  border-radius: 20px;
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.05);
+  animation: fadeIn 0.8s ease-out forwards;
+  overflow: hidden;
+}
+
+#cv {
+  padding: 0;
+}
+
+.col-lg-12 {
+  padding: 0;
+}
+
+.row {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Product image styling */
+.imgPerfil {
+  width: 100%;
+  height: auto;
+  max-height: 450px;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: fadeIn 0.8s ease-out forwards;
+  background-color: #f8fafc;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.imgPerfil:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.row:first-of-type {
+  padding: 50px 30px 30px;
+}
+
+h4 {
+  color: var(--colormain);
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 15px;
+  letter-spacing: -0.5px;
+  animation: slideInRight 0.8s ease-out forwards;
+  position: relative;
+  display: inline-block;
+}
+
+h4::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--colormain);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+h4:hover::after {
+  width: 100%;
+}
+
+h6 {
+  color: #64748b;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  margin-bottom: 25px;
+  font-weight: 500;
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: rgba(var(--colormain-rgb), 0.08);
+  padding: 6px 12px;
+  border-radius: 30px;
+}
+
+h3 {
+  color: #2d3748;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 20px 0;
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+#btnToLeft {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.05);
+  margin-top: 20px;
+  position: relative;
+  left: 0;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+#btnToLeft:hover {
+  transform: translateX(-8px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  background-color: var(--colormain);
+}
+
+#btnToLeft img {
+  width: 20px;
+  height: 20px;
+  transition: all 0.3s ease;
+}
+
+#btnToLeft:hover img {
+  filter: brightness(10);
+}
+
+#desTitulo {
+  padding: 0 30px;
+  margin-top: 50px;
+  position: relative;
+}
+
+#desTitulo h4 {
+  color: var(--colormain);
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 20px;
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+#desTitulo h4::after {
+  width: 30px;
+}
+
+#desTitulo h4:hover::after {
+  width: 70px;
+}
+
+#desTexto {
+  padding: 0 30px 50px;
+  position: relative;
+}
+
+#desTexto p {
+  color: #4a5568;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  animation: fadeIn 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+  position: relative;
+  background-color: #f8fafc;
+  padding: 25px;
+  border-radius: 16px;
+  border-left: 4px solid var(--colormain);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+#desTexto p::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 60px;
+  color: rgba(var(--colormain-rgb), 0.1);
+  font-family: Georgia, serif;
+  line-height: 1;
+  z-index: 0;
+}
+
+#desTexto p::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: 15px;
+  font-size: 60px;
+  color: rgba(var(--colormain-rgb), 0.1);
+  font-family: Georgia, serif;
+  line-height: 1;
+  z-index: 0;
+}
+
+.btn-add-to-cart {
+  background: linear-gradient(135deg, var(--colormain) 0%, rgba(var(--colormain-rgb), 0.8) 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 20px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0px 5px 15px rgba(var(--colormain-rgb), 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-add-to-cart:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 25px rgba(var(--colormain-rgb), 0.3);
+}
+
+.btn-add-to-cart i {
+  transition: all 0.3s ease;
+}
+
+.btn-add-to-cart:hover i {
+  transform: translateX(5px);
 }
 
 @media screen and (max-width: 990px) {
-    body, html {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-    }
+  body,
+  html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
 
-    .container {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+  }
 
-    .row {
-        width: 100%;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .row {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .imgPerfil {
-        width: 100%;
-        max-width: 320px;
-        height: auto;
-        display: block;
-        margin-left: 10px;
-    }
+  .imgPerfil {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin-left: 10px;
+    max-height: 300px;
+    margin-bottom: 30px;
+  }
 
-    h5, h4, h3 {
-        text-align: left;
-        width: 100%;
-        margin-left: 10px;
-    }
+  h4,
+  h3 {
+    text-align: left;
+    width: 100%;
+    margin-left: 10px;
+  }
 
-    #btnToLeft {
-        display: none;
-    }
+  h4 {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
 
-    #desTitulo {
-        font-size: 22px;
-        text-align: left;
-        width: 100%;
-        margin-left: 10px;
-        margin-top: 15px;
-    }
-    
-    #desTexto {
-        margin-bottom: 30px;
-        width: 95%;
-        font-size: 16px;
-        text-align: justify;
-        padding: 0 10px;
-        word-wrap: break-word;
-    }
+  h6 {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
 
-    .col-lg-5, .col-lg-7, .col-lg-10 {
-        width: 100%;
-        text-align: left;
-        margin: 0;
-        padding: 0 10px;
-    }
+  h3 {
+    font-size: 24px;
+    margin: 15px 0;
+  }
+
+  #btnToLeft {
+    display: none;
+    position: static;
+    margin: 15px 0;
+    width: 45px;
+    height: 45px;
+  }
+
+  #desTitulo {
+    font-size: 22px;
+    text-align: left;
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 15px;
+    padding: 0 15px;
+  }
+
+  #desTexto {
+    margin-bottom: 30px;
+    width: 95%;
+    font-size: 16px;
+    text-align: justify;
+    padding: 0 15px 40px;
+    word-wrap: break-word;
+  }
+
+  .col-lg-5,
+  .col-lg-7,
+  .col-lg-10 {
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    padding: 0 10px;
+  }
 }

@@ -13,3 +13,7 @@ if($method == 'POST') {
     $comentarios = $comentariosMostrados->obtenerComentarios();
     include_once '../front/paginas/index.php';
 }
+
+/*
+Autor: Fco. Manuel Martínez Vázquez
+*/

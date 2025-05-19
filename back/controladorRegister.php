@@ -39,3 +39,7 @@ if (isset($_POST['condiciones'])) {
     include_once '../front/paginas/registro.php';
     $error = true;
 }
+
+/*
+Autor: Fco. Manuel Martínez Vázquez
+*/

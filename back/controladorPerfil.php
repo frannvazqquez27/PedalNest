@@ -37,3 +37,7 @@ if ($method == 'POST') {
         header('Location: ../front/paginas/index.php');
     }
 }
+
+/*
+Autor: Fco. Manuel Martínez Vázquez
+*/

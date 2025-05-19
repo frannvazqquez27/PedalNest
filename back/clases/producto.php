@@ -132,3 +132,9 @@ class Producto {
         }
     }    
 }
+
+/*
+Esta clase gestiona productos: permite añadir uno nuevo, obtener todos o por categoría/nombre, reducir o reponer su stock al comprar o reponer, y también restar stock (borrar) si hay cantidad suficiente.
+
+Autor: Fco. Manuel Martínez Vázquez
+*/

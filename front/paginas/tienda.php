@@ -4,6 +4,17 @@
     <title>PedalNest</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Explora la tienda de PedalNest con una amplia variedad de bicicletas y accesorios. Compra calidad, personaliza tu bici y disfruta del ciclismo.">
+    <meta name="keywords" content="tienda de bicicletas, comprar bicicletas, accesorios de ciclismo, PedalNest, bicicletas en Málaga, ciclismo urbano, bicicletas personalizadas">
+    <meta name="author" content="PedalNest">
+    <meta property="og:title" content="Tienda PedalNest | Bicicletas y Accesorios de Calidad">
+    <meta property="og:description" content="Compra bicicletas y accesorios en PedalNest. Desde modelos urbanos hasta de montaña. Todo lo que necesitas para rodar con estilo.">
+    <meta property="og:url" content="https://tusitio.com/tienda.php">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <link rel="canonical" href="https://tusitio.com/tienda.php">
+
     <link rel="stylesheet" type="text/css" href="../front/bootstrap/css/bootstrap.min.css">
     <link rel="icon" type="image/png" href="../front/imgs/favicon/logoPedal.png">
     <link rel="stylesheet" href="../front/css/var.css">
@@ -26,12 +37,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-9" id="cajatienda">
-        <h1>Tienda</h1>
+        <h1>Nuestra Tienda</h1>
           <div class="accordion" id="accordionPanelsStayOpenExample">
           <div class="accordion-item">
           <h2 class="accordion-header" id="panelsStayOpen-headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                  Bicicletas
+                  <i class="fa-solid fa-bicycle" style="margin-right: 10px;"></i> Bicicletas
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
@@ -43,11 +54,11 @@
                         ?>
                         <div class="col-lg-4">
                           <div class="card" style="width: 18rem;">
-                          <a <?php echo($Bicicletas[$i]->Nombre)?>><img src="../front/imgs/tienda/<?php  echo($Bicicletas[$i]->Imagen);?>" class="card-img-top" alt="..."></a>
+                            <a href="../back/controladorProducto.php?nombreProducto=<?php echo urlencode($Bicicletas[$i]->Nombre); ?>"><img src="../front/imgs/tienda/<?php echo($Bicicletas[$i]->Imagen);?>" class="card-img-top" alt="<?php echo($Bicicletas[$i]->Nombre);?>"></a>
                             <div class="card-body">
-                            <a <?php echo($Bicicletas[$i]->Nombre)?> style="color:black"><h5 class="card-title"><?php  echo($Bicicletas[$i]->Nombre);?></h5></a>
-                            <p class="d-none"><?php  echo($Bicicletas[$i]->Precio);?></p>
-                            <button id="<?php echo $Bicicletas[$i]->Nombre ?>" class="btn btn-primary">Comprar <?php  echo($Bicicletas[$i]->Precio);?>€</button>
+                              <a href="../back/controladorProducto.php?nombreProducto=<?php echo urlencode($Bicicletas[$i]->Nombre); ?>" style="color:black"><h5 class="card-title"><?php echo($Bicicletas[$i]->Nombre);?></h5></a>
+                              <p class="d-none"><?php echo($Bicicletas[$i]->Precio);?></p>
+                              <button id="<?php echo $Bicicletas[$i]->Nombre ?>" class="btn btn-primary">Comprar <?php  echo($Bicicletas[$i]->Precio);?>€</button>
                             </div>
                           </div>
                         </div>
@@ -62,7 +73,7 @@
             <div class="accordion-item">
             <h2 class="accordion-header" id="panelsStayOpen-headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                  Accesorios
+                  <i class="fa-solid fa-helmet-safety" style="margin-right: 10px;"></i> Accesorios
                 </button>
               </h2>
               <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
@@ -74,11 +85,13 @@
                       ?>
                         <div class="col-lg-4">
                           <div class="card" style="width: 18rem;">
-                          <a <?php echo($Accesorios[$i]->Nombre)?>><img src="../front/imgs/tienda/<?php  echo($Accesorios[$i]->Imagen);?>" class="card-img-top" alt="..."></a>
+                            <a href="../back/controladorProducto.php?nombreProducto=<?php echo urlencode($Accesorios[$i]->Nombre); ?>"><img src="../front/imgs/tienda/<?php echo($Accesorios[$i]->Imagen);?>" class="card-img-top" alt="<?php echo($Accesorios[$i]->Nombre);?>"></a>
                             <div class="card-body">
-                            <a <?php echo($Accesorios[$i]->Nombre)?> style="color:black"><h5 class="card-title"><?php  echo($Accesorios[$i]->Nombre);?></h5></a>
-                            <p class="d-none"><?php  echo($Accesorios[$i]->Precio);?></p>    
-                            <button  id="<?php echo $Accesorios[$i]->Nombre ?>"  class="btn btn-primary">Comprar <?php  echo($Accesorios[$i]->Precio);?>€</button>
+                              <a href="../back/controladorProducto.php?nombreProducto=<?php echo urlencode($Accesorios[$i]->Nombre); ?>" style="color:black"><h5 class="card-title"><?php echo($Accesorios[$i]->Nombre);?></h5></a>
+                              <p class="d-none"><?php echo($Accesorios[$i]->Precio);?></p>
+                              <button id="<?php echo $Accesorios[$i]->Nombre ?>" class="btn btn-primary">
+                                <i class="fa-solid fa-cart-plus" style="margin-right: 8px;"></i> Comprar <?php echo($Accesorios[$i]->Precio);?>€
+                              </button>
                             </div>
                           </div>
                         </div>
@@ -95,14 +108,16 @@
         <div class="col-lg-3" id="carrito">
           <h2>Tu cesta <i class="fa-solid fa-bag-shopping" style="color: #1b3039;"></i></h2>
           <hr>
-          <div id="cards">Carrito vacio</div>
+          <div id="cards">Carrito vacío</div>
           <template id="card-template">
             <div class="card" style="width: 18rem;" id="item-carrito">
               <div class="card-body">
                 <h5 class="card-title" id ="objetos"></h5>
                 <hr>
                 <div class="btn-group" role="group" aria-label="Basic example">
-                  <button type="button" class="btn btn-primary pse"><i class="fa-solid bi-trash" style="color: #ffffff;"></i></button>
+                  <button type="button" class="btn btn-primary pse">
+                    <i class="fa-solid bi-trash" style="color: #ffffff;"></i>
+                  </button>
                   <button type="button" class="btn btn-primary pbt" id="precio">00,00€</button>
                 </div>
                 <div class="row">
@@ -119,11 +134,13 @@
             <hr>
           </template>
           <div id="total">
-            <h4> Carrito Vacio  -  No hay productos</h4>
+            <h4>Carrito vacío - No hay productos</h4>
           </div>
           <template id="template-end">
             <h3 style="text-align: center; font-size: 25px;" id="T-precio">Total: 00.00€</h3>
-            <button class="btn btn-primary" style="width: 100%;" id="id-btn-pago"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i> Pagar todo</button>
+            <button class="btn btn-primary" style="width: 100%;" id="id-btn-pago">
+              <i class="fa-solid fa-cart-shopping" style="margin-right: 8px; color: #ffffff;"></i> Finalizar compra
+            </button>
             <script src="../front/javascript/realizarCompra.js"></script>
             <script src="../front/javascript/comprobarCompra.js"></script>
           </template>

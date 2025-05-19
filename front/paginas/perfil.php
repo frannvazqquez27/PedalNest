@@ -43,19 +43,24 @@
                             <img src="<?= $url ?>" class="imgPerfil" alt="Imagen de perfil">
                         </div>
                         <div class="input-group mb-3">
-                            <br><br>
                             <form id="f-camb-foto" name="camfoto" method="POST" action="controladorPerfil.php" enctype="multipart/form-data">
                                 <input type="file" name="Subirimagen" id="subirimagen" accept="image/png, image/jpeg">
-                                <label for="subirimagen" class="btn btn-primary">Elige una imagen...</label>
-                                <button type="submit" class="btn btn-primary" name="subir" id="btn-subirimg" disabled>Subir nueva imagen de perfil</button>
+                                <label for="subirimagen" class="bg-primary">
+                                    <i class="fa-solid fa-camera" style="margin-right: 8px;"></i> Elige una imagen...
+                                </label>
+                                <button type="submit" class="btn btn-primary" name="subir" id="btn-subirimg" disabled>
+                                    <i class="fa-solid fa-cloud-arrow-up" style="margin-right: 8px;"></i> Subir imagen
+                                </button>
                             </form>
                         </div>
                     </div>
                     <div class="col-lg-5">
                         <h4><?= $datos->Nombre . " " . $datos->Apellidos; ?></h4>
-                        <h6>BIENVENID@</h6>
+                        <h6><i class="fa-solid fa-circle-user" style="margin-right: 8px; color: var(--colormain);"></i> BIENVENID@ A TU PERFIL</h6>
                         <form name="cerrar" method="POST" action="controladorPerfil.php">
-                            <button type="submit" class="btn btn-primary" name="cerrarSesion" id="cerrar">Cerrar sesión</button>
+                            <button type="submit" class="btn btn-primary" name="cerrarSesion" id="cerrar">
+                                <i class="fa-solid fa-right-from-bracket" style="margin-right: 8px;"></i> Cerrar sesión
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -65,17 +70,21 @@
                 <div class="row">
                     <div class="col-lg-2"></div>
                     <div class="col-lg-4">
-                        <h4>Datos de contacto</h4>
-                        <h5>C. Electrónico: <?= $datos->Correo; ?></h5>
-                        <h5>Teléfono: <?= $datos->Telefijo; ?></h5>
-                        <h5>Móvil: <?= $datos->Telemovil; ?></h5>
+                        <div class="datos-section">
+                            <h4>Datos de contacto</h4>
+                            <h5><i class="fa-solid fa-envelope" style="margin-right: 10px; color: var(--colormain);"></i> <?= $datos->Correo; ?></h5>
+                            <h5><i class="fa-solid fa-phone" style="margin-right: 10px; color: var(--colormain);"></i> <?= $datos->Telefijo; ?></h5>
+                            <h5><i class="fa-solid fa-mobile-alt" style="margin-right: 10px; color: var(--colormain);"></i> <?= $datos->Telemovil; ?></h5>
+                        </div>
                     </div>
 
                     <div class="col-lg-4">
-                        <h4>Datos de envío</h4>
-                        <h5>Dirección: <?= $datos->Direccion; ?></h5>
-                        <h5>Población: <?= $datos->Poblacion; ?></h5>
-                        <h5>Código postal: <?= $datos->CodPos; ?></h5>
+                        <div class="datos-section">
+                            <h4>Datos de envío</h4>
+                            <h5><i class="fa-solid fa-location-dot" style="margin-right: 10px; color: var(--colormain);"></i> <?= $datos->Direccion; ?></h5>
+                            <h5><i class="fa-solid fa-city" style="margin-right: 10px; color: var(--colormain);"></i> <?= $datos->Poblacion; ?></h5>
+                            <h5><i class="fa-solid fa-map-pin" style="margin-right: 10px; color: var(--colormain);"></i> <?= $datos->CodPos; ?></h5>
+                        </div>
                     </div>
                 </div>
             </div>

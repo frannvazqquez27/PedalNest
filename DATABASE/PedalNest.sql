@@ -54,6 +54,12 @@ CREATE TABLE Compra (
   Hora VARCHAR(20) NULL,
   Precio FLOAT(10,2) NULL,
   PRIMARY KEY(IDCompra, Usuarios_IDUsuarios, Productos_Nombre),
-  FOREIGN KEY(Usuarios_IDUsuarios)
-    REFERENCES Usuarios(IDUsuarios)
+  FOREIGN KEY(Usuarios_IDUsuarios) REFERENCES Usuarios(IDUsuarios) ON DELETE CASCADE,
+  FOREIGN KEY(Productos_Nombre) REFERENCES Productos(Nombre) ON DELETE CASCADE
 );
+
+/*
+Base de datos de la web PedalNest.
+
+Autor: Fco. Manuel Martínez Vázquez
+*/

@@ -35,3 +35,9 @@ class Compra {
         }
     }
 }
+
+/*
+Esta clase, permite registrar una compra en la base de datos y obtener los detalles de una compra a partir de su ID.
+
+Autor: Fco. Manuel Martínez Vázquez
+*/

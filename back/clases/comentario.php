@@ -45,3 +45,9 @@ class Comentario {
         }
     }
 }
+
+/*
+Esta clase gestiona comentarios: permite añadir uno nuevo, borrar uno existente si coincide con el usuario, y obtener los 3 últimos registrados.
+
+Autor: Fco. Manuel Martínez Vázquez
+*/

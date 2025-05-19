@@ -13,3 +13,9 @@ VALUES ('Casco Giro Agilis blanco mate','El casco Giro Agilis tiene una variedad
 INSERT INTO `Resenas`(`Nombre`,`Correo`,`Texto`) VALUES  ('Francisco','superpaco@gmail.com','Me encanta esta tienda!!');
 INSERT INTO `Resenas`(`Nombre`,`Correo`,`Texto`) VALUES  ('Cecilia Flores','ceciflog@gmail.com','El personal es espectacular, solucionan todas mis dudas.');
 INSERT INTO `Resenas`(`Nombre`,`Correo`,`Texto`) VALUES  ('Ana','amvbn@gmail.com','Los empleados saben aconsejar bien y hay ofertas interesantes.');
+
+/*
+datos iniciales de la base de datos de la web PedalNest.
+
+Autor: Fco. Manuel Martínez Vázquez
+*/

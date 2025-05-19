@@ -15,3 +15,7 @@ if ($method == 'POST') {
 } else {
     include_once '../front/paginas/reservas.php';
 }
+
+/*
+Autor: Fco. Manuel Martínez Vázquez
+*/

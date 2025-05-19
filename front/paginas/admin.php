@@ -61,8 +61,7 @@
                         <div class="col-lg-6">
                             <h5>Cantidad</h5>
                             <div class="input-group mb-3">
-                                <input id="cantidad" type="number" class="form-control" name="cantidad" placeholder=""
-                                    min="1" required>
+                                <input id="cantidad" type="number" class="form-control" name="cantidad" placeholder="">
                             </div>
                         </div>
                         <button id="btnEliminar" type="submit" class="btn btn-primary" name="delProduct">Eliminar</button>

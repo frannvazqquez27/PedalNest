@@ -48,3 +48,9 @@ class Reserva {
         }
     }
 }
+
+/*
+Esta clase gestiona reservas: permite crear una nueva, eliminar una existente según nombre, día y hora, y mostrar una reserva guardada.
+
+Autor: Fco. Manuel Martínez Vázquez
+*/

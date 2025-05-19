@@ -16,3 +16,7 @@ if ($method == 'POST') {
     $Accesorios = $productos->mostrarProductos('Accesorios');
     include_once '../front/paginas/tienda.php';
 }
+
+/*
+Autor: Fco. Manuel Martínez Vázquez
+*/

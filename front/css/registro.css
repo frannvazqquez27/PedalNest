@@ -1,120 +1,333 @@
+/*
+Este css, le da estilo al formulario de registro de la página web.
+
+Autor: Fco. Manuel Martínez Vázquez
+*/
+
 * {
-    font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
-#cajalogin{
-    position: relative;
-    top: 30px;
-    margin: auto;
+body {
+  background-color: #f8f9fa;
+}
+
+#cajalogin {
+  position: relative;
+  top: 30px;
+  margin: auto;
+  margin-bottom: 100px;
+  padding: 40px 50px;
+  width: 70%;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.8s ease-out forwards;
+  border-top: 5px solid var(--colormain);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#cajalogin:hover {
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+}
+
+#cajalogin h2 {
+  color: var(--colormain);
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 32px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+#cajalogin h2:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--colormain);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+#cajalogin h2:hover:after {
+  width: 100px;
+}
+
+#cajalogin p {
+  color: #6c757d;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.enlace {
+  color: var(--colormain);
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.enlace:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--colormainhover);
+  transition: width 0.3s ease;
+}
+
+.enlace:hover {
+  color: var(--colormainhover);
+}
+
+.enlace:hover:after {
+  width: 100%;
+}
+
+#cajalogin h5 {
+  color: var(--colormain);
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.input-group-text {
+  background-color: var(--colormain);
+  border: none;
+  border-radius: 10px 0 0 10px;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+}
+
+.input-group:focus-within .input-group-text {
+  background-color: var(--colormainhover);
+}
+
+.input-group-text i {
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.input-group:focus-within .input-group-text i {
+  transform: scale(1.1);
+}
+
+.form-control {
+  height: auto;
+  padding: 12px 15px;
+  font-size: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 0 10px 10px 0;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.form-control:focus {
+  border-color: var(--colormain);
+  box-shadow: 0 0 0 0.25rem rgba(var(--colormain-rgb), 0.15);
+  outline: none;
+  background-color: #fff;
+}
+
+.form-control::placeholder {
+  color: #aaa;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus::placeholder {
+  opacity: 0.7;
+  transform: translateX(5px);
+}
+
+hr {
+  margin: 25px 0;
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(var(--colormain-rgb), 0.1),
+    rgba(var(--colormain-rgb), 0.5),
+    rgba(var(--colormain-rgb), 0.1)
+  );
+}
+
+.btn-primary {
+  margin-top: 15px;
+  background-color: var(--colormain);
+  border: none;
+  border-radius: 30px;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(var(--colormain-rgb), 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--colormainhover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(var(--colormain-rgb), 0.3);
+  color: var(--colormain);
+}
+
+.btn-primary:hover:before {
+  left: 100%;
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+}
+
+#cajalogin > form > button:hover {
+  background-color: var(--colormainhover);
+}
+
+footer {
+  position: relative;
+}
+
+#cajalogin > form > div > span {
+  color: white;
+  background-color: var(--colormain);
+}
+
+#cajalogin > form > div > div > div > span {
+  color: white;
+  background-color: var(--colormain);
+}
+
+.ticks {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  color: #495057;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.ticks:hover {
+  color: var(--colormain);
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--colormain);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:hover {
+  transform: scale(1.1);
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 990px) {
+  #cajalogin {
+    width: 90%;
+    padding: 30px;
+    margin-top: 50px;
     margin-bottom: 100px;
-    padding: 50px;
-    width: 50%;
-    background-color: rgb(221, 221, 221);
-    border-radius: 5px;
-}
+  }
 
-.enlace{
-    color: var(--colormain)
-}
+  .enlace {
+    color: var(--colormain);
+  }
 
-.enlace:hover{
-    color: var(--colormainhover)
-}
+  .enlace:hover {
+    color: var(--colormainhover);
+  }
 
-.btn-primary{
-    margin-top:15px;
-    background-color: var(--colormain);
-}
+  #cajalogin > h2 {
+    font-size: 28px;
+  }
 
-.btn-primary:hover{
-    background-color: var(--colormain);
-}
+  p,
+  a,
+  h5 {
+    font-size: 16px;
+  }
 
-#cajalogin > form > button:hover{
-    background-color: var(--colormainhover);
-}
+  input.form-control {
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+  }
 
-footer{
+  #cajalogin > form > div > span > svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  #cajalogin > form > div > div > div > span > svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .ticks {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+
+  .btn-primary {
+    margin-top: 15px;
+    font-size: 16px;
+    padding: 12px 20px;
+    width: 100%;
+  }
+
+  #pcopy {
+    font-size: 14px;
+  }
+
+  footer {
     position: relative;
-}
-
-#cajalogin > form > div > span{
-    color: white;
-    background-color: var(--colormain);
-
-}
-
-#cajalogin > form > div > div > div > span{
-    color: white;
-    background-color: var(--colormain);
-}
-
-.ticks{
-    margin-bottom:5px;
-}
-
-@media screen and (max-width: 990px){
-    #cajalogin{
-        width: 100%;
-        padding: 100px;
-        margin-top: 100px;
-        margin-bottom: 200px;   
-    }
-
-    .enlace{
-        color: var(--colormain)
-    }
-    
-    .enlace:hover{
-        color: var(--colormainhover)
-    }
-
-    #cajalogin > h2{
-        font-size: 65px;
-    }
-
-    p, a, h5{
-        font-size: 35px;
-    }
-
-    input.form-control{
-        width: 100%;
-        height: 70px;
-        font-size: 35px;
-    }
- 
-    #cajalogin > form > div > span > svg{
-        width: 35px;
-        height: 35px;
-    }
-
-    #cajalogin > form > div > div >div > span > svg{
-        width: 35px;
-        height: 35px;
-    }
-
-    .ticks{
-        font-size:35px;
-        margin-bottom:15px;
-    }
-
-    input[type=checkbox]{
-        width:30px;
-        height:30px;
-    }
-
-    .btn-primary{
-        margin-top:15px;
-        font-size: 35px;
-        padding: 10px 20px 10px 20px
-    }
-
-    #pcopy{
-        font-size: 24px;
-    }
-
-    footer{
-        position: relative;
-        z-index: -1;
-    }
+    z-index: -1;
+  }
 }

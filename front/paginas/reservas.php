@@ -4,6 +4,17 @@
     <title>PedalNest</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Reserva tu bicicleta en PedalNest de forma rápida y sencilla. Elige día, hora y número de bicicletas para disfrutar de tu ruta perfecta.">
+    <meta name="keywords" content="reserva bicicletas, alquiler bicicletas, PedalNest, bicicletas en Málaga, rutas en bici, ciclismo urbano, reservar online bicicleta">
+    <meta name="author" content="PedalNest">
+    <meta property="og:title" content="Reserva tu Bicicleta | PedalNest">
+    <meta property="og:description" content="Gestiona fácilmente tu reserva de bicicleta con PedalNest. Elige fecha, hora y número de bicicletas y empieza a rodar.">
+    <meta property="og:url" content="https://tusitio.com/reservas.php">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <link rel="canonical" href="https://tusitio.com/reservas.php">
+
     <link rel="stylesheet" type="text/css" href="../front/bootstrap/css/bootstrap.min.css">
     <script src="../front/bootstrap/js/bootstrap.min.js"></script>
     <link rel="icon" type="image/png" href="../front/imgs/favicon/logoPedal.png">
@@ -164,26 +175,25 @@
             </div>
             <div class="row">
               <div  class="col-lg-6">
-              <h3>Nombre</h3>
+                <h3>Nombre y apellidos</h3>
               </div>
               <div  class="col-lg-6">
-              <div class=" input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user" style="color: #ffffff;"></i></span>
-                <input type="text" id="nombreInput" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" name="user" required>
-              </div>
+                <div class=" input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user" style="color: #ffffff;"></i></span>
+                  <input type="text" id="nombreInput" class="form-control" placeholder="Nombre y apellidos" aria-label="Username" aria-describedby="basic-addon1" name="user" required>
+                </div>
               </div>
             </div>
             <div class="row">
               <div  class="col-lg-6">
-              <h3>Número de bicicletas</h3>
+                <h3>Número de bicicletas</h3>
               </div>
               <div  class="col-lg-6">
-              <div class=" input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-bicycle" style="color: #ffffff;"></i>
-                </span>
-                <input type="number" id="personasInput" class="form-control" placeholder="Nº de bicicletas" aria-label="Username" aria-describedby="basic-addon1" required min="1" max="8" name="personas">
-              </div>
-              
+                <div class=" input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-bicycle" style="color: #ffffff;"></i>
+                  </span>
+                  <input type="number" id="personasInput" class="form-control" placeholder="Nº de bicicletas" aria-label="Username" aria-describedby="basic-addon1" required min="1" max="8" name="personas">
+                </div>
               </div>
             </div>
             <div class="row">

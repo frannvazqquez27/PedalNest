@@ -1,6 +1,6 @@
 <?php session_start();
 
-include_once 'clases/usuarios.php'; 
+include_once 'clases/usuarios.php';
 include_once 'clases/producto.php'; 
 include_once 'controladorSesion.php';
 include '../front/paginas/admin.php';
@@ -15,3 +15,9 @@ if($method == 'POST') {
         $operacion->productoBorrar($_POST['nombreproducto2'],$_POST['cantidad']);
     }
 }
+
+/*
+Este script se encarga de gestionar las operaciones de añadir o eliminar stock de productos en la base de datos, según los datos enviados por un formulario vía POST.
+
+Autor: Fco. Manuel Martínez Vázquez
+*/

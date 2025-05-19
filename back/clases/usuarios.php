@@ -87,3 +87,9 @@ class Usuario {
         }
     }
 }
+
+/*
+Esta clase gestiona usuarios: permite iniciar sesión, registrarse si el correo no existe, ver los datos de un usuario y actualizar su imagen de perfil.
+
+Autor: Fco. Manuel Martínez Vázquez
+*/

@@ -1,188 +1,265 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/*
+Este css, le da estilo al slider de la página principal de la web.
+
+Autor: Fco. Manuel Martínez Vázquez
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
 }
 
 #container-slider {
-    position: relative;
-    display: block;
-    width: 100%;
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 12px 12px;
 }
 
 #slider {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 350px;
-    min-height: 350px;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 450px;
+  min-height: 350px;
 }
 
 #slider li {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100%;
-    height: 100%;
-    display: block;
-    -webkit-transition: opacity 1s;
-    -moz-transition: opacity 1s;
-    -ms-transition: opacity 1s;
-    -o-transition: opacity 1s;
-    transition: opacity 1s;
-    z-index: -1;
-    opacity: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100%;
+  height: 100%;
+  display: block;
+  -webkit-transition: opacity 1.5s ease;
+  -moz-transition: opacity 1.5s ease;
+  -ms-transition: opacity 1.5s ease;
+  -o-transition: opacity 1.5s ease;
+  transition: opacity 1.5s ease;
+  z-index: -1;
+  opacity: 0;
 }
 
-#container-slider .arrowPrev, #container-slider .arrowNext{
-    font-size: 30pt;
-    color: rgba(204, 204, 204, 0.65);
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    left: 50px;
-    z-index: 2; 
+#container-slider .arrowPrev,
+#container-slider .arrowNext {
+  font-size: 30pt;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50px;
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+#container-slider .arrowPrev:hover,
+#container-slider .arrowNext:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: translateY(-50%) scale(1.1);
 }
 
 #container-slider .arrowNext {
-    left: initial;
-    right: 50px !important;
+  left: initial;
+  right: 50px !important;
 }
 
-.content_slider{
-    padding: 15px 30px;
-    color: #FFF;
-    width: 100%;
-    height: 100%;
+.content_slider {
+  padding: 15px 30px;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 70%, rgba(0, 0, 0, 0) 100%);
 }
 
-.content_slider div{
-    text-align: center;
+.content_slider div {
+  text-align: center;
 }
 
-.content_slider h2{
-    font-family: 'arial';
-    font-size: 30pt;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+.content_slider h2 {
+  font-family: "Arial", sans-serif;
+  font-size: 42px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  animation: fadeInDown 1s ease-out forwards;
 }
 
 .content_slider p {
-    font-size: 15pt;
-    font-family: 'arial';
-    color: #FFF;
-    margin-bottom: 80px;
+  font-size: 22px;
+  font-family: "Arial", sans-serif;
+  color: #fff;
+  margin-bottom: 40px;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+  max-width: 800px;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
 }
 
-#slider li .content_slider{
-    background: rgba(0, 0, 0, 0.50);
-    padding: 10px 125px;
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.content_slider{
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.btnSlider{
-    color: #FFF;
-    font-size: 15pt;
-    font-family: 'arial';
-    letter-spacing: 1px;
-    padding: 10px 50px;
-    border: 1px solid #CCC;
-    background: rgba(13, 13, 13, 0.55);
-    border-radius: 0.25rem;
-    text-decoration: none;
-    transition: .5s all;
-    margin-top: 100px;
+#slider li .content_slider {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 70%, rgba(0, 0, 0, 0) 100%);
+  padding: 10px 125px;
 }
 
-.btnSlider:hover{
-    background: var(--colormain);
-    border: 1px solid #111;
-    color: white;
+.btnSlider {
+  color: #fff;
+  font-size: 18px;
+  font-family: "Arial", sans-serif;
+  letter-spacing: 1px;
+  padding: 12px 30px;
+  border: 2px solid #fff;
+  background: rgba(var(--colormain-rgb), 0.7);
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  margin-top: 30px;
+  display: inline-block;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+.btnSlider:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.btnSlider:hover {
+  background: var(--colormain);
+  border-color: var(--colormain);
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btnSlider:hover:before {
+  left: 100%;
 }
 
 .listslider {
-    position: absolute;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    left: 50%;
-    bottom: 5%;
-    list-style: none;
-    z-index: 2;
-    transform: translateX(-50%);
-    display: NONE;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  bottom: 5%;
+  list-style: none;
+  z-index: 2;
+  transform: translateX(-50%);
 }
 
 .listslider li {
-    border-radius: 50%;
-    width: 10px;
-    height: 10px;
-    cursor: pointer;
-    margin: 0 5px;
+  margin: 0 5px;
 }
 
 .listslider li a {
-    background: #CCC;
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-    display: block;
-    margin: auto;
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.listslider li a:hover {
+  background: #fff;
+  transform: scale(1.2);
 }
 
 .item-select-slid {
-    background: #FFF  !important;
+  background: #fff !important;
+  width: 14px !important;
+  height: 14px !important;
 }
 
-@media screen and (max-width: 1025px){
-	.content_slider h2 {
-	    font-size: 30pt !important;
-	}
-    
-	.content_slider p {
-	    font-size: 20pt !important;
-	}
+@media screen and (max-width: 1025px) {
+  .content_slider h2 {
+    font-size: 30pt !important;
+  }
 
-	#container-slider .arrowPrev, #container-slider .arrowNext{
-		font-size: 25pt;
-	}
+  .content_slider p {
+    font-size: 20pt !important;
+  }
 
-	#container-slider .arrowPrev{
-		left: 15px;
-	}
+  #container-slider .arrowPrev,
+  #container-slider .arrowNext {
+    font-size: 25pt;
+  }
 
-	#container-slider .arrowNext{
-		right: 15px !important;
-	}
+  #container-slider .arrowPrev {
+    left: 15px;
+  }
 
-	#slider{
-		height: 400px;
-		min-height: 200px;
-	}
+  #container-slider .arrowNext {
+    right: 15px !important;
+  }
 
-	#slider li .content_slider{
-		padding: 10px 35px;
-	}
+  #slider {
+    height: 400px;
+    min-height: 200px;
+  }
 
-	.btnSlider{
-		padding: 15px 50px;
-    	font-size: 25pt;
-	}
+  #slider li .content_slider {
+    padding: 10px 35px;
+  }
+
+  .btnSlider {
+    padding: 15px 30px;
+    font-size: 18pt;
+  }
 }

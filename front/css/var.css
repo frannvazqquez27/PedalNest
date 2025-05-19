@@ -1,7 +1,16 @@
+/*
+Este css, contiene estilos generales para utilizarlos en los css que hay.
+
+Autor: Fco. Manuel Martínez Vázquez
+*/
+
 :root {
-    --colormain: #1b3039;
-    --colormainhover: #aad8ec;
-    --fondocajas: #00968f;
-    --tamanomovilh1: 60px;
-    --tamanomovilp: 35px;
+  --colormain: #1b3039;
+  --colormain-rgb: 27, 48, 57;
+  --colormainhover: #aad8ec;
+  --colormainhover-rgb: 170, 216, 236;
+  --fondocajas: #00968f;
+  --fondocajas-rgb: 0, 150, 143;
+  --tamanomovilh1: 40px;
+  --tamanomovilp: 18px;
 }

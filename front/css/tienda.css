@@ -1,156 +1,656 @@
+/*
+Este css, le da estilo a la tienda.
+
+Autor: Fco. Manuel Martínez Vázquez
+*/
+
 * {
-    font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
-#ulmenu > li:nth-child(2) a{
-    font-weight: bold;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-#cajatienda{
-    margin-bottom: 50px;
-    padding: 10px 50px;
-    border-radius: 5px;
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-#cajatienda > h1{
-    color: black;
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.card{
-    margin: auto;
-    border: none;
-    display: inline;
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-.card-body{
-    border: solid 1px var(--fondocajas);
+body {
+  background-color: #f9f9f9;
 }
 
-.btn{
-    background-color: var(--colormain);
-    border: none;
-    transform: All 0.5s;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.btn:hover{
-    background-color: var(--colormainhover);
+#cajatienda {
+  margin-bottom: 50px;
+  padding: 30px 50px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.8s ease-out forwards;
+  position: relative;
+  overflow: hidden;
 }
 
-.btn:focus{
-    background-color: var(--colormainhover);
-    box-shadow: none;
+#cajatienda:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(var(--colormain-rgb), 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 0;
 }
 
-.row{
-    margin-top: 20px;
+#cajatienda > h1 {
+  color: var(--colormain);
+  font-weight: 700;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
+  z-index: 1;
 }
 
-#carrito{
-    margin-bottom: 50px;
-    padding: 10px 50px;
-    border-left: solid 1px;
+#cajatienda > h1:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background-color: var(--colormain);
+  border-radius: 2px;
 }
 
-#carrito > h1{
-    color: black;
+.accordion {
+  margin-top: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1;
 }
 
-#carrito > h1 > svg{
-    width: 40px;
-    height: 40px;
-    margin-top: -13px;
+.accordion-item {
+  border: none;
+  margin-bottom: 15px;
+  animation: fadeIn 0.6s ease-out forwards;
 }
 
-.card-body{
-    background-color: white;
+.accordion-item:nth-child(1) {
+  animation-delay: 0.1s;
 }
 
-.card-body > h5{
-    text-align: center;
+.accordion-item:nth-child(2) {
+  animation-delay: 0.3s;
 }
 
-.card-carrito{
-    margin-bottom: 15px;
+.accordion-button {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: var(--colormain);
+  padding: 18px 25px;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
 }
 
-.precio,.precio:hover{
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-    font-weight: bold;
+.accordion-button:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.accordion-button:hover:before {
+  left: 100%;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--colormain);
+  color: white;
+  box-shadow: 0 5px 15px rgba(var(--colormain-rgb), 0.2);
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(var(--colormain-rgb), 0.15);
+  border-color: rgba(0, 0, 0, 0.125);
+}
+
+.accordion-body {
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+}
+
+.card {
+  margin: 20px auto;
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+  animation: fadeIn 0.8s ease-out forwards;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+  background-color: white;
+  padding: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.card-body:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(var(--colormain-rgb), 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: -1;
+}
+
+.card-body > h5 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--colormain);
+  font-size: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.card-body > h5:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background-color: var(--colormain);
+  border-radius: 2px;
+}
+
+.card-carrito {
+  margin-bottom: 20px;
+}
+
+.precio,
+.precio:hover {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: var(--fondocajas);
+  text-align: center;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.precio:hover {
+  background-color: rgba(var(--fondocajas-rgb), 0.9);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(var(--fondocajas-rgb), 0.2);
+}
+
+.btn-group {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.pbt,
+.pbt:hover,
+.pbt:focus {
+  background-color: var(--fondocajas);
+  color: white;
+  font-weight: bold;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.pbt:hover {
+  background-color: rgba(var(--fondocajas-rgb), 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(var(--fondocajas-rgb), 0.2);
+}
+
+.btn {
+  background-color: var(--colormain);
+  border: none;
+  padding: 12px 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.btn:hover {
+  background-color: var(--colormainhover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(var(--colormain-rgb), 0.15);
+  color: var(--colormain);
+}
+
+.btn:hover:before {
+  left: 100%;
+}
+
+.btn:focus {
+  background-color: var(--colormainhover);
+  box-shadow: 0 0 0 0.25rem rgba(var(--colormain-rgb), 0.25);
+  color: var(--colormain);
+}
+
+.btn-danger {
+  background-color: var(--colormain);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-danger:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+.btn-danger:hover {
+  background-color: var(--colormainhover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(220, 53, 69, 0.2);
+}
+
+.btn-danger:hover:before {
+  left: 100%;
+}
+
+#carrito {
+  margin-bottom: 50px;
+  padding: 30px;
+  border-left: solid 1px #e9ecef;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  animation: slideInRight 0.8s ease-out forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+#carrito:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0) 0%, rgba(var(--colormain-rgb), 0.05) 100%);
+  z-index: 0;
+}
+
+#carrito > h2 {
+  color: var(--colormain);
+  font-weight: 700;
+  margin-bottom: 25px;
+  font-size: 26px;
+  position: relative;
+  padding-bottom: 12px;
+  z-index: 1;
+}
+
+#carrito > h2:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--colormain);
+  border-radius: 2px;
+}
+
+#carrito > h2 > svg {
+  width: 24px;
+  height: 24px;
+  margin-top: -5px;
+  margin-left: 8px;
+  animation: pulse 2s infinite;
+}
+
+#carrito > a > svg {
+  margin-top: -6px;
+  margin-right: 10px;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.08);
+}
+
+#cards {
+  max-height: 450px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+#cards::-webkit-scrollbar {
+  width: 8px;
+}
+
+#cards::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+#cards::-webkit-scrollbar-thumb {
+  background: var(--colormain);
+  border-radius: 10px;
+}
+
+#cards::-webkit-scrollbar-thumb:hover {
+  background: var(--colormainhover);
+}
+
+#total {
+  margin-top: 25px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1;
+}
+
+#total h4 {
+  font-size: 18px;
+  color: #6c757d;
+  text-align: center;
+}
+
+#tarjeta-creada {
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  border: none;
+  animation: fadeIn 0.5s ease-out forwards;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 90%;
+  z-index: 1000;
+}
+
+#id-cerrar-card {
+  padding: 15px;
+  cursor: pointer;
+}
+
+#id-cerrar-card i {
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+
+#id-cerrar-card i:hover {
+  color: var(--colormainhover) !important;
+  transform: scale(1.2) rotate(90deg);
+}
+
+.form-control,
+.form-select {
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--colormain);
+  box-shadow: 0 0 0 0.25rem rgba(var(--colormain-rgb), 0.15);
+  outline: none;
+  background-color: #fff;
+}
+
+.form-control::placeholder {
+  color: #aaa;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus::placeholder {
+  opacity: 0.7;
+  transform: translateX(5px);
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--colormain);
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.text-center {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+#item-carrito {
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+#item-carrito:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#T-precio {
+  font-weight: 700;
+  color: var(--colormain);
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 990px) {
+  #cajatienda {
+    padding: 20px;
+    margin: 0;
     width: 100%;
-    margin-top:10px;
-    padding: 5px;
-    border-radius: 0.25rem;
-    background-color: var(--fondocajas);
-}
+    border-radius: 0;
+  }
 
-.btn-group{
+  h1,
+  .card-title {
+    font-size: var(--tamanomovilh1);
+  }
+
+  .col-lg-4 {
+    margin-bottom: 30px;
+  }
+
+  .card-text,
+  .btn {
+    font-size: var(--tamanomovilp);
+  }
+
+  .btn {
     width: 100%;
-    margin-bottom: 10px;
-}
+    margin: 5px 0;
+    padding: 15px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
 
-.pbt, .pbt:hover, .pbt:focus{
-    background-color: var(--fondocajas); color: black;font-weight: bold;
-}
+  .accordion-button {
+    font-size: var(--tamanomovilp);
+    padding: 18px;
+  }
 
-#carrito > a > svg{
-    margin-top: -6px;
-    margin-right: 10px;
-}
+  #carrito > div > div > div > button > svg {
+    width: 24px;
+    height: 24px;
+  }
 
-.card-img-top{
-    height:120px;
-}
+  #carrito > div > div > h5 {
+    font-size: var(--tamanomovilp);
+  }
 
-@media screen and (max-width: 990px){
-    #cajatienda{
-        padding: 0;
-        margin: 0;
-        width: 100%;
-    }
+  #carrito > a > svg {
+    margin-top: -10px;
+    width: 24px;
+    height: 24px;
+  }
 
-    h1, .card-title{
-        font-size: var(--tamanomovilh1)
-    }
+  #carrito > h3 {
+    font-size: var(--tamanomovilh1);
+  }
 
-    .col-lg-4{
-        margin-bottom: 70px;
-    }
-    
-    .card-text, .btn{
-        font-size: var(--tamanomovilp);
-    }
+  #carrito {
+    border: none;
+    margin-top: 40px;
+    padding: 25px;
+    border-radius: 12px;
+  }
 
-    .btn{
-        width: 100%;
-        margin: 5px;
-    }
+  .card {
+    margin: 0 auto 25px;
+    width: 100% !important;
+    max-width: 320px;
+  }
 
-    .accordion-button{
-        font-size: var(--tamanomovilp);
-    }
+  .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    #carrito > div > div > div > button > svg{
-        width: 35px;
-        height: 35px;
-    }
+  .card-body .btn-primary {
+    display: block !important;
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    font-size: 16px;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 10;
+  }
 
-    #carrito > div > div > h5{
-        font-size: var(--tamanomovilp);
-    }
+  .card-img-top {
+    height: 180px;
+  }
 
-    #carrito > a > svg{
-        margin-top: -10px;
-        width: 35px;
-        height: 35px;
-    }
+  #tarjeta-creada {
+    width: 90% !important;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
 
-    #carrito > h3{
-        font-size: var(--tamanomovilh1);
-    }
-   
-    #carrito{
-        border: none;
-    }
+  .form-control,
+  .form-select {
+    font-size: 16px;
+  }
+
+  .form-label {
+    font-size: 18px;
+  }
+
+  #id-btn-pago {
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  .accordion-body .container .row .col-lg-4 .card .card-body .btn {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100%;
+    margin-top: 10px;
+    z-index: 10;
+  }
 }

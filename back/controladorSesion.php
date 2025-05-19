@@ -12,3 +12,7 @@ function cerrarSesion() {
     session_destroy();
     return true;
 }
+
+/*
+Autor: Fco. Manuel Martínez Vázquez
+*/
