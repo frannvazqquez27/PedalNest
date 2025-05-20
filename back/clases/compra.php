@@ -10,7 +10,7 @@ class Compra {
     public function anadirCompra($idUsuario, $Productos_Nombre, $dia, $hora, $precio) {
         try {
             $db = getDB();
-            $stmt = $db->prepare("INSERT INTO compra(Usuarios_IDUsuarios, Productos_Nombre, Dia, Hora, Precio) 
+            $stmt = $db->prepare("INSERT INTO Compra(Usuarios_IDUsuarios, Productos_Nombre, Dia, Hora, Precio) 
                                   VALUES (:user, :Productos_Nombre, :dia, :hora, :precio)");
             $stmt->bindParam("user", $idUsuario, PDO::PARAM_INT);
             $stmt->bindParam("Productos_Nombre", $Productos_Nombre, PDO::PARAM_STR);
@@ -29,7 +29,7 @@ class Compra {
         try {
             $db = getDB();
             $stmt = $db->prepare("SELECT Usuarios_IDUsuarios, Productos_Nombre, Dia, Hora, Precio 
-                                  FROM compra WHERE IDCompra = :id_compra"); 
+                                  FROM Compra WHERE IDCompra = :id_compra"); 
             $stmt->bindParam("id_compra", $id_compra, PDO::PARAM_INT);
             $stmt->execute();
             $data = $stmt->fetch(PDO::FETCH_OBJ);
