@@ -1,0 +1,1 @@
+{"version":1,"defects":{"ComentarioTest::testBorrarComentarioEjecutaDelete":8,"ComentarioTest::testAnadirCometarioEjecutaInsert":8,"ComentarioTest::testObtenerComentariosDevuelveArray":8},"times":{"ComentarioTest::testBorrarComentarioEjecutaDelete":0.03,"ComentarioTest::testAnadirCometarioEjecutaInsert":0,"ComentarioTest::testObtenerComentariosDevuelveArray":0.001}}
