@@ -1,0 +1,50 @@
+<database name="PedalNest">
+  <table name="Productos">
+    <column name="Nombre" type="VARCHAR(500)" primary_key="true" nullable="false"/>
+    <column name="Descripcion" type="VARCHAR(5000)" nullable="true"/>
+    <column name="Imagen" type="VARCHAR(500)" nullable="true"/>
+    <column name="Precio" type="VARCHAR(10)" nullable="false"/>
+    <column name="Cantidad" type="INTEGER" nullable="true"/>
+    <column name="Categoria" type="VARCHAR(45)" nullable="true"/>
+  </table>
+
+  <table name="Usuarios">
+    <column name="IDUsuarios" type="INTEGER" primary_key="true" auto_increment="true" nullable="false"/>
+    <column name="Nombre" type="VARCHAR(45)" nullable="true"/>
+    <column name="Apellidos" type="VARCHAR(45)" nullable="true"/>
+    <column name="Correo" type="VARCHAR(45)" nullable="true"/>
+    <column name="Pass" type="VARCHAR(255)" nullable="true"/>
+    <column name="CodPos" type="VARCHAR(5)" nullable="true"/>
+    <column name="Poblacion" type="VARCHAR(45)" nullable="true"/>
+    <column name="Direccion" type="VARCHAR(255)" nullable="true"/>
+    <column name="Telefijo" type="VARCHAR(9)" nullable="true"/>
+    <column name="Telemovil" type="VARCHAR(9)" nullable="true"/>
+    <column name="Notificaciones" type="VARCHAR(1)" nullable="true"/>
+    <column name="ImagenUsuario" type="VARCHAR(100)" nullable="true"/>
+  </table>
+
+  <table name="Resenas">
+    <column name="IDReseñas" type="INTEGER" primary_key="true" auto_increment="true" nullable="false"/>
+    <column name="Nombre" type="VARCHAR(45)" nullable="true"/>
+    <column name="Correo" type="VARCHAR(45)" nullable="true"/>
+    <column name="Texto" type="VARCHAR(2000)" nullable="true"/>
+  </table>
+
+  <table name="Reservas">
+    <column name="IDReservas" type="INTEGER" primary_key="true" auto_increment="true" nullable="false"/>
+    <column name="Nombre" type="VARCHAR(45)" nullable="true"/>
+    <column name="Dia" type="VARCHAR(45)" nullable="true"/>
+    <column name="HoraEntrada" type="VARCHAR(45)" nullable="true"/>
+    <column name="HoraSalida" type="VARCHAR(45)" nullable="true"/>
+    <column name="Participantes" type="VARCHAR(45)" nullable="true"/>
+  </table>
+
+  <table name="Compra">
+    <column name="IDCompra" type="INTEGER" primary_key="true" auto_increment="true" nullable="false"/>
+    <column name="Usuarios_IDUsuarios" type="INTEGER" primary_key="true" nullable="false" foreign_key="Usuarios(IDUsuarios)"/>
+    <column name="Productos_Nombre" type="VARCHAR(500)" primary_key="true" nullable="false" foreign_key="Productos(Nombre)"/>
+    <column name="Dia" type="VARCHAR(20)" nullable="true"/>
+    <column name="Hora" type="VARCHAR(20)" nullable="true"/>
+    <column name="Precio" type="FLOAT(10,2)" nullable="true"/>
+  </table>
+</database>

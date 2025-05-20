@@ -1,0 +1,64 @@
+{
+  "database": "PedalNest",
+  "tables": [
+    {
+      "name": "Productos",
+      "columns": [
+        {"name": "Nombre", "type": "VARCHAR(500)", "primary_key": true, "nullable": false},
+        {"name": "Descripcion", "type": "VARCHAR(5000)", "nullable": true},
+        {"name": "Imagen", "type": "VARCHAR(500)", "nullable": true},
+        {"name": "Precio", "type": "VARCHAR(10)", "nullable": false},
+        {"name": "Cantidad", "type": "INTEGER", "nullable": true},
+        {"name": "Categoria", "type": "VARCHAR(45)", "nullable": true}
+      ]
+    },
+    {
+      "name": "Usuarios",
+      "columns": [
+        {"name": "IDUsuarios", "type": "INTEGER", "primary_key": true, "auto_increment": true, "nullable": false},
+        {"name": "Nombre", "type": "VARCHAR(45)", "nullable": true},
+        {"name": "Apellidos", "type": "VARCHAR(45)", "nullable": true},
+        {"name": "Correo", "type": "VARCHAR(45)", "nullable": true},
+        {"name": "Pass", "type": "VARCHAR(255)", "nullable": true},
+        {"name": "CodPos", "type": "VARCHAR(5)", "nullable": true},
+        {"name": "Poblacion", "type": "VARCHAR(45)", "nullable": true},
+        {"name": "Direccion", "type": "VARCHAR(255)", "nullable": true},
+        {"name": "Telefijo", "type": "VARCHAR(9)", "nullable": true},
+        {"name": "Telemovil", "type": "VARCHAR(9)", "nullable": true},
+        {"name": "Notificaciones", "type": "VARCHAR(1)", "nullable": true},
+        {"name": "ImagenUsuario", "type": "VARCHAR(100)", "nullable": true}
+      ]
+    },
+    {
+      "name": "Resenas",
+      "columns": [
+        {"name": "IDReseñas", "type": "INTEGER", "primary_key": true, "auto_increment": true, "nullable": false},
+        {"name": "Nombre", "type": "VARCHAR(45)", "nullable": true},
+        {"name": "Correo", "type": "VARCHAR(45)", "nullable": true},
+        {"name": "Texto", "type": "VARCHAR(2000)", "nullable": true}
+      ]
+    },
+    {
+      "name": "Reservas",
+      "columns": [
+        {"name": "IDReservas", "type": "INTEGER", "primary_key": true, "auto_increment": true, "nullable": false},
+        {"name": "Nombre", "type": "VARCHAR(45)", "nullable": true},
+        {"name": "Dia", "type": "VARCHAR(45)", "nullable": true},
+        {"name": "HoraEntrada", "type": "VARCHAR(45)", "nullable": true},
+        {"name": "HoraSalida", "type": "VARCHAR(45)", "nullable": true},
+        {"name": "Participantes", "type": "VARCHAR(45)", "nullable": true}
+      ]
+    },
+    {
+      "name": "Compra",
+      "columns": [
+        {"name": "IDCompra", "type": "INTEGER", "primary_key": true, "auto_increment": true, "nullable": false},
+        {"name": "Usuarios_IDUsuarios", "type": "INTEGER", "primary_key": true, "nullable": false, "foreign_key": {"references": "Usuarios", "column": "IDUsuarios"}},
+        {"name": "Productos_Nombre", "type": "VARCHAR(500)", "primary_key": true, "nullable": false, "foreign_key": {"references": "Productos", "column": "Nombre"}},
+        {"name": "Dia", "type": "VARCHAR(20)", "nullable": true},
+        {"name": "Hora", "type": "VARCHAR(20)", "nullable": true},
+        {"name": "Precio", "type": "FLOAT(10,2)", "nullable": true}
+      ]
+    }
+  ]
+}

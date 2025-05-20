@@ -1,3 +1,5 @@
+DROP IF EXISTS PedalNest;
+CREATE DATABASE PedalNest;
 USE PedalNest;
 
 CREATE TABLE Productos (
