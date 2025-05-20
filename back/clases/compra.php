@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include_once 'conexion.php';
 
 class Compra {
@@ -12,7 +16,7 @@ class Compra {
             $stmt->bindParam("Productos_Nombre", $Productos_Nombre, PDO::PARAM_STR);
             $stmt->bindParam("dia", $dia, PDO::PARAM_STR);
             $stmt->bindParam("hora", $hora, PDO::PARAM_STR);
-            $stmt->bindParam("precio", $precio, PDO::PARAM_INT);
+            $stmt->bindParam("precio", $precio, PDO::PARAM_STR);
             $stmt->execute();
             $db = null;
             return true;

@@ -1,5 +1,9 @@
 <?php 
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include_once "conexion.php";
 
 class Usuario {
@@ -7,7 +11,7 @@ class Usuario {
         try {
             $db = getDB();
             $hash_password = hash('sha256', $password);
-            $stmt = $db->prepare("SELECT IDUsuarios FROM usuarios WHERE Correo=:usernameEmail AND Pass=:hash_password"); 
+            $stmt = $db->prepare("SELECT IDUsuarios FROM Usuarios WHERE Correo=:usernameEmail AND Pass=:hash_password"); 
             $stmt->bindParam("usernameEmail", $usernameEmail, PDO::PARAM_STR);
             $stmt->bindParam("hash_password", $hash_password, PDO::PARAM_STR);
             $stmt->execute();
@@ -28,12 +32,12 @@ class Usuario {
     public function registerUsuario($nombre, $apellidos, $email, $password, $codigo_postal, $poblacion, $direccion, $telefono_fijo, $telefono_movil, $notificaciones) {
         try {
             $db = getDB();
-            $st = $db->prepare("SELECT IDUsuarios FROM usuarios WHERE Correo=:email"); 
+            $st = $db->prepare("SELECT IDUsuarios FROM Usuarios WHERE Correo=:email"); 
             $st->bindParam("email", $email, PDO::PARAM_STR);
             $st->execute();
             $count = $st->rowCount();
             if ($count < 1) {
-                $stmt = $db->prepare("INSERT INTO usuarios(Nombre, Apellidos, Correo, Pass, CodPos, Poblacion, Direccion, Telefijo, Telemovil, Notificaciones) 
+                $stmt = $db->prepare("INSERT INTO Usuarios(Nombre, Apellidos, Correo, Pass, CodPos, Poblacion, Direccion, Telefijo, Telemovil, Notificaciones) 
                                       VALUES (:nombre, :apellidos, :email, :hash_password, :codigo_postal, :poblacion, :direccion, :telefono_fijo, :telefono_movil, :notificaciones)");
                 $stmt->bindParam("nombre", $nombre, PDO::PARAM_STR);
                 $stmt->bindParam("apellidos", $apellidos, PDO::PARAM_STR);
@@ -63,7 +67,7 @@ class Usuario {
     public function detallesUsuario($id) {
         try {
             $db = getDB();
-            $stmt = $db->prepare("SELECT Nombre, Apellidos, Correo, Pass, CodPos, Poblacion, Direccion, Telefijo, Telemovil, ImagenUsuario FROM usuarios WHERE IDUsuarios=:id"); 
+            $stmt = $db->prepare("SELECT Nombre, Apellidos, Correo, Pass, CodPos, Poblacion, Direccion, Telefijo, Telemovil, ImagenUsuario FROM Usuarios WHERE IDUsuarios=:id"); 
             $stmt->bindParam("id", $id, PDO::PARAM_INT);
             $stmt->execute();
             $data = $stmt->fetch(PDO::FETCH_OBJ);
@@ -76,7 +80,7 @@ class Usuario {
     public function actualizarImagen($id, $img) {
         try {
             $db = getDB();
-            $stmt = $db->prepare("UPDATE usuarios SET ImagenUsuario=:img WHERE IDUsuarios=:id"); 
+            $stmt = $db->prepare("UPDATE Usuarios SET ImagenUsuario=:img WHERE IDUsuarios=:id"); 
             $stmt->bindParam("img", $img, PDO::PARAM_STR);
             $stmt->bindParam("id", $id, PDO::PARAM_INT);
             $stmt->execute();

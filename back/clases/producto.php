@@ -1,18 +1,22 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include_once "conexion.php";
 
 class Producto {
     public function nuevoProducto($nombre, $descripcion, $imagen, $precio, $cantidad, $categoria) {
         try {
             $db = getDB();
-            $st = $db->prepare("SELECT Nombre FROM productos WHERE Nombre=:nombre"); 
+            $st = $db->prepare("SELECT Nombre FROM Productos WHERE Nombre=:nombre"); 
             $st->bindParam("nombre", $nombre, PDO::PARAM_STR);
             $st->execute();
             $count = $st->rowCount();
 
             if ($count < 1) {
-                $stmt = $db->prepare("INSERT INTO productos(Nombre, Descripcion, Imagen, Precio, Cantidad, Categoria) 
+                $stmt = $db->prepare("INSERT INTO Productos(Nombre, Descripcion, Imagen, Precio, Cantidad, Categoria) 
                                       VALUES (:nombre, :descripcion, :imagen, :precio, :cantidad, :categoria)");
                 $stmt->bindParam("nombre", $nombre, PDO::PARAM_STR);
                 $stmt->bindParam("descripcion", $descripcion, PDO::PARAM_STR);
@@ -36,7 +40,7 @@ class Producto {
     public function mostrarProductos($categoria) {
         try {
             $db = getDB();
-            $stmt = $db->prepare("SELECT Nombre, Descripcion, Imagen, Precio, Cantidad FROM productos WHERE Categoria=:categoria"); 
+            $stmt = $db->prepare("SELECT Nombre, Descripcion, Imagen, Precio, Cantidad FROM Productos WHERE Categoria=:categoria"); 
             $stmt->bindParam("categoria", $categoria, PDO::PARAM_STR);
             $stmt->execute();
             $data = $stmt->fetchAll(PDO::FETCH_CLASS);
@@ -50,7 +54,7 @@ class Producto {
     public function mostrarTodosProductos() {
         try {
             $db = getDB();
-            $stmt = $db->prepare("SELECT Nombre, Imagen, Precio, Cantidad FROM productos"); 
+            $stmt = $db->prepare("SELECT Nombre, Imagen, Precio, Cantidad FROM Productos"); 
             $stmt->execute();
             $data = $stmt->fetchAll(PDO::FETCH_CLASS);
             $db = null;
@@ -63,7 +67,7 @@ class Producto {
     public function productoPorNombre($nombre) {
         try {
             $db = getDB();
-            $stmt = $db->prepare("SELECT Nombre, Descripcion, Imagen, Precio, Cantidad, Categoria FROM productos WHERE Nombre=:nombre"); 
+            $stmt = $db->prepare("SELECT Nombre, Descripcion, Imagen, Precio, Cantidad, Categoria FROM Productos WHERE Nombre=:nombre"); 
             $stmt->bindParam("nombre", $nombre, PDO::PARAM_STR);
             $stmt->execute();
             $data = $stmt->fetch(PDO::FETCH_OBJ);
@@ -77,12 +81,12 @@ class Producto {
     public function productoCompra($nombre, $num) {
         try {
             $db = getDB();
-            $stmt = $db->prepare("SELECT Cantidad FROM productos WHERE Nombre=:nombre"); 
+            $stmt = $db->prepare("SELECT Cantidad FROM Productos WHERE Nombre=:nombre"); 
             $stmt->bindParam("nombre", $nombre, PDO::PARAM_STR);
             $stmt->execute();
             $data = $stmt->fetch(PDO::FETCH_OBJ);
             $cantidad = $data->Cantidad - $num;
-            $stmt2 = $db->prepare("UPDATE productos SET Cantidad = :cantidad WHERE Nombre = :nombre");
+            $stmt2 = $db->prepare("UPDATE Productos SET Cantidad = :cantidad WHERE Nombre = :nombre");
             $stmt2->bindParam("nombre", $nombre, PDO::PARAM_STR);
             $stmt2->bindParam("cantidad", $cantidad, PDO::PARAM_STR);
             $stmt2->execute();
@@ -95,12 +99,12 @@ class Producto {
     public function productoReponer($nombre, $num) {
         try {
             $db = getDB();
-            $stmt = $db->prepare("SELECT Cantidad FROM productos WHERE Nombre=:nombre"); 
+            $stmt = $db->prepare("SELECT Cantidad FROM Productos WHERE Nombre=:nombre"); 
             $stmt->bindParam("nombre", $nombre, PDO::PARAM_STR);
             $stmt->execute();
             $data = $stmt->fetch(PDO::FETCH_OBJ);
             $cantidad = $data->Cantidad + $num;
-            $stmt2 = $db->prepare("UPDATE productos SET Cantidad = :cantidad WHERE Nombre = :nombre");
+            $stmt2 = $db->prepare("UPDATE Productos SET Cantidad = :cantidad WHERE Nombre = :nombre");
             $stmt2->bindParam("nombre", $nombre, PDO::PARAM_STR);
             $stmt2->bindParam("cantidad", $cantidad, PDO::PARAM_STR);
             $stmt2->execute();
@@ -113,13 +117,13 @@ class Producto {
     public function productoBorrar($nombre, $num) {
         try {
             $db = getDB();
-            $stmt = $db->prepare("SELECT Cantidad FROM productos WHERE Nombre=:nombre");
+            $stmt = $db->prepare("SELECT Cantidad FROM Productos WHERE Nombre=:nombre");
             $stmt->bindParam("nombre", $nombre, PDO::PARAM_STR);
             $stmt->execute();
             $data = $stmt->fetch(PDO::FETCH_OBJ);
             if ($data->Cantidad >= $num) {
                 $nuevaCantidad = $data->Cantidad - $num;
-                $stmt2 = $db->prepare("UPDATE productos SET Cantidad = :cantidad WHERE Nombre = :nombre");
+                $stmt2 = $db->prepare("UPDATE Productos SET Cantidad = :cantidad WHERE Nombre = :nombre");
                 $stmt2->bindParam("nombre", $nombre, PDO::PARAM_STR);
                 $stmt2->bindParam("cantidad", $nuevaCantidad, PDO::PARAM_INT);
                 $stmt2->execute();

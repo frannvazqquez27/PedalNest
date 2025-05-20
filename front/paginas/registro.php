@@ -25,9 +25,9 @@
     <div class="row" id="cv">
       <div class="col-lg-12" id="cajalogin">
         <h2>Registro</h2>
-        <p>¿Ya estás registrado? <a href="ControladorLogin.php" class="enlace">Iniciar Sesión</a></p>
+        <p>¿Ya estás registrado? <a href="../back/controladorLogin.php" class="enlace">Iniciar Sesión</a></p>
         <hr>
-        <form id="formularioRegistro"method="POST" action="ControladorRegister.php">
+        <form id="formularioRegistro"method="POST" action="controladorRegister.php">
         <div class="row">  
             <div class="col-lg-6">  
                 <h5>Nombre</h5>

@@ -23,8 +23,8 @@ function getCookie(cname) {
   }
 
 function limpiarCampos() {
-    cards.removeChild();
-    total.removeChild();
+    cards.innerHTML = '';
+    total.innerHTML = '';
 }
 
 document.addEventListener('DOMContentLoaded', () => {

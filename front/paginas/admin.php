@@ -25,11 +25,11 @@
     <div class="container" style="margin-bottom:100px;">
         <div class="row" id="cv">
             <div class="col-lg-12" id="cajalogin">
-                <h4>Reponer bicicleta</h4>
+                <h4>Reponer Producto</h4>
                 <form id="formularioReponer" method="POST" action="controladorAdmin.php">
                     <div class="row">
                         <div class="col-lg-6">
-                            <h5>Nombre bicicleta</h5>
+                            <h5>Nombre Producto</h5>
                             <div class="input-group mb-3">
                                 <input id="nombreproducto1" type="text" class="form-control" name="nombreproducto1"
                                     placeholder="Nombre" required>
@@ -50,10 +50,10 @@
                 <hr>
                 <br>
 
-                <h4>Eliminar bicicleta</h4>
+                <h4>Eliminar Producto</h4>
                 <form id="formularioEliminar" method="POST" action="controladorAdmin.php">
                     <div class="row">
-                        <h5>Nombre de la bicicleta a eliminar</h5>
+                        <h5>Nombre del Producto a eliminar</h5>
                         <div class="input-group mb-3">
                             <input id="nombreproducto2" type="text" class="form-control" name="nombreproducto2"
                                 placeholder="Nombre" required>

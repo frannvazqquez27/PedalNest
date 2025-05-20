@@ -1,12 +1,16 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include_once 'conexion.php';
 
 class Reserva {
     public function crearReserva($nombre, $dia, $horaEntrada, $horaSalida, $participantes) {
         try {
             $db = getDB();
-            $stmt = $db->prepare("INSERT INTO reservas(Nombre, Dia, HoraEntrada, HoraSalida, Participantes) 
+            $stmt = $db->prepare("INSERT INTO Reservas(Nombre, Dia, HoraEntrada, HoraSalida, Participantes) 
                                   VALUES (:nombre, :dia, :horaEntrada, :horaSalida, :participantes)");
             $stmt->bindParam("nombre", $nombre, PDO::PARAM_STR);
             $stmt->bindParam("dia", $dia, PDO::PARAM_STR);
@@ -24,7 +28,7 @@ class Reserva {
     public function borrarReserva($nombre, $dia, $horaEntrada) {
         try {
             $db = getDB();
-            $stmt = $db->prepare("DELETE FROM reservas WHERE Nombre = :nombre AND Dia = :dia AND HoraEntrada = :horaEntrada");
+            $stmt = $db->prepare("DELETE FROM Reservas WHERE Nombre = :nombre AND Dia = :dia AND HoraEntrada = :horaEntrada");
             $stmt->bindParam("nombre", $nombre, PDO::PARAM_STR);
             $stmt->bindParam("dia", $dia, PDO::PARAM_STR);
             $stmt->bindParam("horaEntrada", $horaEntrada, PDO::PARAM_STR);
@@ -39,7 +43,7 @@ class Reserva {
     public function mostrarReserva() {
         try {
             $db = getDB();
-            $stmt = $db->prepare("SELECT Nombre, Dia, HoraEntrada, HoraSalida, Participantes FROM reservas"); 
+            $stmt = $db->prepare("SELECT Nombre, Dia, HoraEntrada, HoraSalida, Participantes FROM Reservas"); 
             $stmt->execute();
             $data = $stmt->fetch(PDO::FETCH_OBJ);
             return $data;

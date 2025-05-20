@@ -1,4 +1,10 @@
-<?php session_start();
+<?php 
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+session_start();
 
 include_once 'clases/usuarios.php';
 
@@ -21,7 +27,6 @@ if (isset($_POST['condiciones'])) {
             $_POST['poblacion'],
             $_POST['direccion'],
             $_POST['telefonoFijo'],
-            $_POST['telefonomovil'],
             $_POST['telefonomovil'],
             $notificacion
         );
