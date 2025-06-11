@@ -20,4 +20,5 @@
     <?php include '../front/partes/cabecera.php'; ?>
     <?php include '../front/partes/footer.php'; ?>
 </body>
+<!--Autor: Fco. Manuel Martínez Vázquez-->
 </html>

@@ -97,3 +97,7 @@ class ComentarioTest extends TestCase
         $this->assertEquals('Ana', $result[0]->nombre);
     }
 }
+
+/*
+Autor: Fco. Manuel Martínez Vázquez
+*/

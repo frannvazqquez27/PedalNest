@@ -124,4 +124,5 @@
   </div>
   <?php include '../front/partes/footer.php';?> 
 </body>
+<!--Autor: Fco. Manuel Martínez Vázquez-->
 </html>

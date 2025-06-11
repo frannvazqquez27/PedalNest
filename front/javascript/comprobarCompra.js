@@ -168,3 +168,7 @@ function horaJS() {
         return true;
     }
 }
+
+/*
+Autor: Fco. Manuel Martínez Vázquez
+*/

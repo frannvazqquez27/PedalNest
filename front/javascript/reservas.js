@@ -104,3 +104,7 @@ function personasJS() {
     }
     return true;
 }
+
+/*
+Autor: Fco. Manuel Martínez Vázquez
+*/

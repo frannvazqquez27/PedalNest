@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 function getDB() {
     $dbhost = "localhost";
-    $dbuser = "";
+    $dbuser = "root";
     $dbpass = "";
     $dbname = "PedalNest";
     try {

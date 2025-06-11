@@ -129,3 +129,7 @@ const btnAccion = e => {
     }
     e.stopPropagation()
 }
+
+/*
+Autor: Fco. Manuel Martínez Vázquez
+*/

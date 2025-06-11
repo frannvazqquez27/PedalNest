@@ -106,7 +106,7 @@
           </div>
         </div>
         <div class="col-lg-3" id="carrito">
-          <h2>Tu cesta <i class="fa-solid fa-bag-shopping" style="color: #1b3039;"></i></h2>
+          <h2>Carrito <i class="fa-solid fa-bag-shopping" style="color: #1b3039;"></i></h2>
           <hr>
           <div id="cards">Carrito vacío</div>
           <template id="card-template">
@@ -239,4 +239,5 @@
   </div>
   <?php include '../front/partes/footer.php';?>
 </body>
+<!--Autor: Fco. Manuel Martínez Vázquez-->
 </html>

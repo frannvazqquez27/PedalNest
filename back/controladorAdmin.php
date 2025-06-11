@@ -1,5 +1,4 @@
 <?php
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -12,13 +11,19 @@ include_once 'controladorSesion.php';
 include '../front/paginas/admin.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
-$operacion= new Producto();
+$operacion = new Producto();
 if($method == 'POST') {
     if(isset($_POST["addProduct"])) {
         $operacion->productoReponer($_POST['nombreproducto1'],$_POST['cantidad']);
     }
     if(isset($_POST["delProduct"])) {
-        $operacion->productoBorrar($_POST['nombreproducto2'],$_POST['cantidad']);
+        $nombre = $_POST['nombreproducto2'];
+        $cantidad = $_POST['cantidad'];
+        if ($cantidad === "" || $cantidad === null) {
+            $operacion->eliminarProductoTotal($nombre);
+        } else {
+            $operacion->productoBorrar($nombre, $cantidad);
+        }
     }
 }
 

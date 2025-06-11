@@ -15,3 +15,7 @@ $producto = new Producto();
 $productoSSS = $producto -> productoPorNombre($name);
 
 include_once '../front/paginas/producto.php';
+
+/*
+Autor: Fco. Manuel Martínez Vázquez
+*/

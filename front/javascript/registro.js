@@ -236,3 +236,7 @@ function movilAPI(){
         return true;
     }
 }
+
+/*
+Autor: Fco. Manuel Martínez Vázquez
+*/

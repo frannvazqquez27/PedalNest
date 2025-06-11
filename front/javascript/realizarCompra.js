@@ -22,3 +22,7 @@ $( document ).ready(function() {
         $('#tarjeta-creada').removeClass('d-none')
     }) 
 });
+
+/*
+Autor: Fco. Manuel Martínez Vázquez
+*/

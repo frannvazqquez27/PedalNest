@@ -117,7 +117,7 @@
           <h4>Nombre</h4>
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-user" style="color: #ffffff;"></i></span>
-              <input id="nombreInput" type="text" class="form-control" placeholder="Tu nombre" aria-label="Username" aria-describedby="basic-addon1" name="nombre" required>
+              <input id="nombreInput" type="text" class="form-control" placeholder="Nombre y apellidos" aria-label="Username" aria-describedby="basic-addon1" name="nombre" required>
             </div>
           <h4>Correo electrónico</h4>
           <div class="input-group mb-3">
@@ -159,4 +159,5 @@
 
   <?php include '../front/partes/footer.php';?> 
 </body>
+<!--Autor: Fco. Manuel Martínez Vázquez-->
 </html>

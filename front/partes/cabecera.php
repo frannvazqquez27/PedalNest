@@ -32,4 +32,5 @@
     </header>
     <script type="text/javascript" src="../front/javascript/nav.js"></script>
 </body>
+<!--Autor: Fco. Manuel Martínez Vázquez-->
 </html>

@@ -107,3 +107,7 @@ class Calendar {
 
 const cal = new Calendar();
 cal.init();
+
+/*
+Autor: Fco. Manuel Martínez Vázquez
+*/

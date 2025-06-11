@@ -114,6 +114,18 @@ class Producto {
         }
     }
 
+    public function eliminarProductoTotal($nombre) {
+        try {
+            $db = getDB();
+            $stmt = $db->prepare("DELETE FROM Productos WHERE Nombre = :nombre");
+            $stmt->bindParam("nombre", $nombre, PDO::PARAM_STR);
+            $stmt->execute();
+            $db = null;
+        } catch (PDOException $e) {
+            echo '{"error":{"text":' . $e->getMessage() . '}}';
+        }
+    }
+
     public function productoBorrar($nombre, $num) {
         try {
             $db = getDB();
@@ -121,7 +133,7 @@ class Producto {
             $stmt->bindParam("nombre", $nombre, PDO::PARAM_STR);
             $stmt->execute();
             $data = $stmt->fetch(PDO::FETCH_OBJ);
-            if ($data->Cantidad >= $num) {
+            if ($data && $data->Cantidad >= $num) {
                 $nuevaCantidad = $data->Cantidad - $num;
                 $stmt2 = $db->prepare("UPDATE Productos SET Cantidad = :cantidad WHERE Nombre = :nombre");
                 $stmt2->bindParam("nombre", $nombre, PDO::PARAM_STR);
@@ -134,7 +146,7 @@ class Producto {
         } catch (PDOException $e) {
             echo '{"error":{"text":' . $e->getMessage() . '}}';
         }
-    }    
+    }
 }
 
 /*
