@@ -229,6 +229,7 @@ hr {
     padding: 30px;
     margin-top: 50px;
     margin-bottom: 100px;
+    overflow: visible !important;
   }
 
   #cajalogin > h2 {
@@ -252,10 +253,18 @@ hr {
     height: 18px;
   }
 
-  .btn-primary {
+  .btn-primary,
+  button[type="submit"] {
     font-size: 16px;
     padding: 12px 20px;
-    width: 100%;
+    width: 100% !important;
+    display: block !important;
+    margin: 20px auto 0 auto !important;
+    min-width: 150px;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
   }
 
   #pcopy {
